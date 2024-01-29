@@ -21,6 +21,8 @@ body {
     min-height: 100vh;
 }
 
+/* --- HEADER --- */
+
 header {
     display: flex;
     margin-top: 20px;
@@ -32,14 +34,54 @@ h1 {
     margin-top: 30px;
 }
 
+/* --- FOOTER --- */
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    
+}
+
+
+
+/* --- MAIN --- */ 
+
 .main {
     display: flex;
-    flex: 0 1 auto;
+    flex: 1;
+    margin-left: 400px;
+    
 }
 
 .sidebar {
     display: flex;
     flex-direction: column;
-  
+    padding: 16px;
+    gap: 20px;
+
 }
+
+    /* --- CSS --- */
+
+
+  .btn {
+    background-color: #cea8e4;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    
+  }
+
+  .btn:active {
+    background-color: #b688d0;
+  }
+
+  #sizeSlider {
+    background-color: aqua;
+  }
+
 
