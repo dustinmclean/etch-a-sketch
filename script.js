@@ -25,6 +25,7 @@ function setBlackMode() {
     currentMode = "black";
 }
 
+
 // Function to set erase mode: 
 function setEraseMode() {
     currentMode = "erase";
@@ -85,6 +86,10 @@ function colorGrid() {
 
     document.addEventListener("mouseup", (e) => {
         isDrawing = false;
+    });
+
+    sizeSlider.addEventListener("mouseover", () => {
+        isDrawing = false;
     })
 
 
@@ -99,7 +104,7 @@ function setCurrentSize(newSize) {
     currentSize = newSize;
 }
 
-// Function for New Size: 
+// Function for displaying new size: 
 
 function displayNewSize(value) {
     sizeValue.innerHTML = `${value} x ${value}`;
@@ -115,6 +120,7 @@ function createGrid(currentSize) {
         const gridBlock = document.createElement("div");
         gridContainer.appendChild(gridBlock).className = "grid-block";
     }
+    setModeAndColorGrid("black");
 }
 
 function clearGrid() {
@@ -135,7 +141,11 @@ function updateGridSize(value) {
     
 
 
-sizeSlider.addEventListener("mousemove", (e) => updateGridSize(e.target.value));
+sizeSlider.addEventListener("mousemove", (e) => {
+    if (e.buttons === 1) {
+        updateGridSize(e.target.value);
+    }
+});
 sizeSlider.addEventListener("change", (e) => updateGridSize(e.target.value));
 
 createGrid(currentSize);
